@@ -13,6 +13,6 @@ class video-player extends Component
 
     public function render()
     {
-        return view('ld-video-player::components.video-player');
+        return view('sb-video-player::components.video-player');
     }
 }

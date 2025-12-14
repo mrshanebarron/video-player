@@ -1,5 +1,5 @@
 <?php
 
 return [
-    // Default settings for ld-video-player
+    // Default settings for sb-video-player
 ];

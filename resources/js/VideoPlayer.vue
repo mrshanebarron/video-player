@@ -68,7 +68,7 @@
 import { ref, onMounted } from 'vue';
 
 export default {
-  name: 'LdVideoPlayer',
+  name: 'SbVideoPlayer',
   props: {
     src: { type: String, required: true },
     poster: { type: String, default: '' },

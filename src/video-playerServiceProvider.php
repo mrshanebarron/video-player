@@ -11,14 +11,14 @@ class video-playerServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/ld-video-player.php', 'ld-video-player');
+        $this->mergeConfigFrom(__DIR__ . '/../config/sb-video-player.php', 'sb-video-player');
     }
 
     public function boot(): void
     {
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'ld-video-player');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'sb-video-player');
 
-        Livewire::component('ld-video-player', video-player::class);
+        Livewire::component('sb-video-player', video-player::class);
 
         $this->loadViewComponentsAs('ld', [
             Bladevideo-player::class,
@@ -26,12 +26,12 @@ class video-playerServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../config/ld-video-player.php' => config_path('ld-video-player.php'),
-            ], 'ld-video-player-config');
+                __DIR__ . '/../config/sb-video-player.php' => config_path('sb-video-player.php'),
+            ], 'sb-video-player-config');
 
             $this->publishes([
-                __DIR__ . '/../resources/views' => resource_path('views/vendor/ld-video-player'),
-            ], 'ld-video-player-views');
+                __DIR__ . '/../resources/views' => resource_path('views/vendor/sb-video-player'),
+            ], 'sb-video-player-views');
         }
     }
 }
