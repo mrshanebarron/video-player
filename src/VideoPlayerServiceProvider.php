@@ -1,13 +1,13 @@
 <?php
 
-namespace MrShaneBarron\video-player;
+namespace MrShaneBarron\VideoPlayer;
 
 use Illuminate\Support\ServiceProvider;
-use MrShaneBarron\video-player\Livewire\video-player;
-use MrShaneBarron\video-player\View\Components\video-player as Bladevideo-player;
+use MrShaneBarron\VideoPlayer\Livewire\VideoPlayer;
+use MrShaneBarron\VideoPlayer\View\Components\video-player as BladeVideoPlayer;
 use Livewire\Livewire;
 
-class video-playerServiceProvider extends ServiceProvider
+class VideoPlayerServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
@@ -21,7 +21,7 @@ class video-playerServiceProvider extends ServiceProvider
         Livewire::component('sb-video-player', video-player::class);
 
         $this->loadViewComponentsAs('ld', [
-            Bladevideo-player::class,
+            BladeVideoPlayer::class,
         ]);
 
         if ($this->app->runningInConsole()) {
