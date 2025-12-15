@@ -1,10 +1,10 @@
 <?php
 
-namespace MrShaneBarron\video-player\View\Components;
+namespace MrShaneBarron\VideoPlayer\View\Components;
 
 use Illuminate\View\Component;
 
-class video-player extends Component
+class VideoPlayer extends Component
 {
     public function __construct()
     {

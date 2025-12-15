@@ -4,8 +4,7 @@ namespace MrShaneBarron\VideoPlayer;
 
 use Illuminate\Support\ServiceProvider;
 use MrShaneBarron\VideoPlayer\Livewire\VideoPlayer;
-use MrShaneBarron\VideoPlayer\View\Components\video-player as BladeVideoPlayer;
-use Livewire\Livewire;
+use MrShaneBarron\VideoPlayer\View\Components\VideoPlayer as BladeVideoPlayer;
 
 class VideoPlayerServiceProvider extends ServiceProvider
 {
@@ -18,7 +17,9 @@ class VideoPlayerServiceProvider extends ServiceProvider
     {
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'sb-video-player');
 
-        Livewire::component('sb-video-player', video-player::class);
+        if (class_exists(\Livewire\Livewire::class)) {
+            \Livewire\Livewire::component('sb-video-player', VideoPlayer::class);
+        }
 
         $this->loadViewComponentsAs('ld', [
             BladeVideoPlayer::class,
