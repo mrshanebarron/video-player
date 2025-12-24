@@ -14,6 +14,24 @@ class VideoPlayer extends Component
     public bool $controls = true;
     public string $aspectRatio = '16:9';
 
+    public function mount(
+        string $src = '',
+        ?string $poster = null,
+        bool $autoplay = false,
+        bool $loop = false,
+        bool $muted = false,
+        bool $controls = true,
+        string $aspectRatio = '16:9'
+    ): void {
+        $this->src = $src;
+        $this->poster = $poster;
+        $this->autoplay = $autoplay;
+        $this->loop = $loop;
+        $this->muted = $muted;
+        $this->controls = $controls;
+        $this->aspectRatio = $aspectRatio;
+    }
+
     public function render()
     {
         return view('sb-video-player::livewire.video-player');
